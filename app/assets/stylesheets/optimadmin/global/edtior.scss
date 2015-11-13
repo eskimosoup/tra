@@ -1,0 +1,70 @@
+@import 'optimadmin/lib/mixins', '../../lib/variables';
+@import 'optimadmin/global/additional_reset';
+
+html,
+body {
+  font-size: 14px;
+}
+
+body {
+
+}
+
+a {
+
+
+  &:link {
+
+  }
+
+  &:visited {
+
+  }
+
+  &:hover {
+
+  }
+
+  &:active {
+
+  }
+}
+
+p {
+
+}
+
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+  
+}
+
+.image-left {
+  float: left;
+  margin: em(16px) em(16px) em(16px) 0;
+}
+
+.image-right {
+  float: right;
+  margin: em(16px) 0 em(16px) em(16px);
+}
