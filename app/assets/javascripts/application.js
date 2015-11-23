@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require components/toggle-class
+//= require vendor/foundation
+$(document).foundation();

@@ -1,0 +1,71 @@
+@import 'optimadmin/lib/mixins', '../../lib/variables';
+@import 'optimadmin/global/additional_reset', '../../vendor/foundation/util/unit';
+
+body {
+
+}
+
+a {
+
+
+  &:link {
+
+  }
+
+  &:visited {
+
+  }
+
+  &:hover {
+
+  }
+
+  &:active {
+
+  }
+}
+
+p {
+
+}
+
+
+h1 {
+  font-size: rem-calc(26);
+  font-weight: $open-sans-semibold;
+}
+
+h2 {
+  font-size: rem-calc(24);
+  font-weight: $open-sans-semibold;
+}
+
+h3 {
+  font-size: rem-calc(22);
+  font-weight: $open-sans-semibold;
+}
+
+h4 {
+  font-size: rem-calc(20);
+  font-weight: $open-sans-semibold;
+}
+
+h5 {
+  font-size: rem-calc(18);
+  font-weight: $open-sans-semibold;
+}
+
+h6 {
+  font-size: rem-calc(16);
+  font-weight: $open-sans-semibold;
+}
+
+.image-left {
+  float: left;
+  margin: em(16px) em(16px) em(16px) 0;
+}
+
+.image-right {
+  float: right;
+  margin: em(16px) 0 em(16px) em(16px);
+}

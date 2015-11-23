@@ -1,0 +1,11 @@
+<header class="primary-header">
+  <div class="logo">
+    <%= link_to (image_tag 'layout/header/logo.png', alt: global_site_settings['Name']), root_url, title: global_site_settings['Name'] %>
+  </div>
+
+  <nav class="primary-navigation-wrap">
+    <ul class="primary-navigation">
+      <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
+    </ul>
+  </nav>
+</header>

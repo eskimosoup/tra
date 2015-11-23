@@ -1,0 +1,18 @@
+.primary-header {
+  @include grid-row;
+  padding: rem-calc(25px 0 15px);
+}
+
+.logo {
+  @include breakpoint(medium) {
+    @include grid-column(6);
+  }
+}
+
+.primary-navigation-wrap {
+  position: relative;
+
+  @include breakpoint(medium) {
+    @include grid-column(6);
+  }
+}

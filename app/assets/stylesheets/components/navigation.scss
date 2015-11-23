@@ -1,0 +1,36 @@
+.primary-navigation {
+  font-size: rem-calc(12px);
+  font-weight: $open-sans-semibold;
+  list-style: none;
+
+  @include breakpoint(medium) {
+    bottom: 0;
+    position: absolute;
+  }
+
+  li {
+    @include breakpoint(medium) {
+      display: inline-block;
+      margin: rem-calc(0 12px);
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $dark-grey;
+    display: block;
+    padding: rem-calc(0 0 12px);
+
+    &:hover,
+    &.active {
+      border-bottom: 5px solid $pastel-orange;
+    }
+  }
+}
