@@ -69,3 +69,9 @@ h6 {
   float: right;
   margin: em(16px) 0 em(16px) em(16px);
 }
+
+.paragraph-highlight {
+  color: $turquoise;
+  font-size: rem-calc(14px);
+  font-weight: $open-sans-bold;
+}
