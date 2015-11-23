@@ -1,0 +1,34 @@
+.primary-footer {
+  @extend %clearfix;
+  @include grid-row;
+  padding: rem-calc(15px 0);
+  font-size: rem-calc(12px);
+}
+
+.footer-navigation {
+  float: left;
+  list-style: none;
+
+  li {
+    border-right: 1px solid $dark-grey;
+    display: inline-block;
+    line-height: 1;
+    padding: rem-calc(0 15px);
+
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  a {
+    color: $dark-grey;
+  }
+}
+
+.copyright {
+  text-align: right;
+
+  @include breakpoint(medium) {
+    float: right;
+  }
+}

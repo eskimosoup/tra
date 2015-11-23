@@ -1,1 +1,102 @@
-<h1>Hello world</h1>
+<div class="primary-focus-banner">
+  <div class="focus-banner-information">
+    <p>
+      We are an alliance of social enterprises delivering health and
+      social care across different areas of England. Between us we deliver
+      over five hundred services ranging from community nursing to custodial
+      care, public health to psychological wellbeing, dentistry to paediatrics
+      and much, much more.
+    </p>
+  </div>
+
+  <%= image_tag 'components/banner/placeholder.jpg', alt: '', class: 'primary-focus-banner-image' %>
+</div>
+
+<div class="content-focus">
+  <div class="content">
+    <p>
+      Our broad geographical and service base, along with our social enterprise
+      status provides a unique prospect for potential research. We ensure all
+      our member organisations are research-ready, and satisfy the needs of the
+      Department of Health’s Research management Governance requirements.
+    </p>
+
+    <p>
+      <strong>
+        There is significant interest in the collective power of a social
+        enterprise research alliance who, through our collaboration and
+        collective resources can offer the following:
+      </strong>
+    </p>
+
+    <ul>
+      <li>
+        Construction and delivery of research drawing on our combined patient populations.
+      </li>
+
+      <li>
+        Research opportunities that look at the social value of what we do.
+      </li>
+    </ul>
+  </div>
+
+  <div class="interests">
+    <div class="interest-1">
+      <%= link_to '#' do %>
+        <div class="interest-content">
+          I am interested in becoming a member
+        </div>
+
+        <div class="interest-icon">
+          <%= image_tag 'placeholders/interest-1.png', alt: 'Interest' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="interest-2">
+      <%= link_to '#' do %>
+        <div class="interest-content">
+          I am a researcher
+        </div>
+
+        <div class="interest-icon">
+          <%= image_tag 'placeholders/researcher.png', alt: 'Interest' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="article-focus">
+  <h2 class="focus-heading">Latest News</h2>
+
+  <div class="articles">
+    <div class="article">
+      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
+
+      <%= link_to 'News headline here', '#', class: 'article-title' %>
+
+      <p class="article-summary">News summary will go here with a link to read the full story.</p>
+
+      <%= link_to 'Read more', '#', class: 'article-read-more' %>
+    </div>
+    <div class="article">
+      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
+
+      <%= link_to 'News headline here', '#', class: 'article-title' %>
+
+      <p class="article-summary">News summary will go here with a link to read the full story.</p>
+
+      <%= link_to 'Read more', '#', class: 'article-read-more' %>
+    </div>
+    <div class="article">
+      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
+
+      <%= link_to 'News headline here', '#', class: 'article-title' %>
+
+      <p class="article-summary">News summary will go here with a link to read the full story.</p>
+
+      <%= link_to 'Read more', '#', class: 'article-read-more' %>
+    </div>
+  </div>
+</div>

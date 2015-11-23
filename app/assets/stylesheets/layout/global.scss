@@ -1,0 +1,13 @@
+html,
+body {
+  background: $light-grey image-url('layout/global/background.png') no-repeat fixed center;
+  min-height: 100%;
+}
+
+.site-content {
+  @include grid-row;
+  @include grid-column(12);
+  background: $white;
+  float: none;
+  padding-bottom: rem-calc(15px);
+}
