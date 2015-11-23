@@ -4,7 +4,7 @@
   margin-bottom: rem-calc(51px);
 
   .focus-banner-information {
-    background: image-url('components/banner/mask.png') no-repeat left center;
+    background: image-url('components/banner/large-mask.png') no-repeat left center;
     max-height: 258px;
     padding: rem-calc(70px 210px 70px 70px);
     position: absolute;
@@ -28,6 +28,35 @@
   }
 }
 
-.primary-focus-banner-image {
+.small-focus-banner {
+  @include grid-row;
+  @include grid-column(12);
+  margin-bottom: rem-calc(51px);
+  max-height: 83px;
+  overflow: hidden;
+
+  .focus-banner-information {
+    background: image-url('components/banner/small-mask.png') no-repeat left center;
+    padding: rem-calc(34px 210px 30px 34px);
+    position: absolute;
+    z-index: 1;
+
+    @include breakpoint(medium) {
+      width: 607px;
+    }
+  }
+
+  h1 {
+    color: $pastel-orange;
+    font-size: rem-calc(18px);
+    font-weight: $open-sans-extrabold;
+    margin: 0;
+    padding: 0;
+    max-width: 451px;
+  }
+}
+
+.primary-focus-banner-image,
+.small-focus-banner-image {
   float: right;
 }

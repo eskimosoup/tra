@@ -7,7 +7,7 @@
     @include grid-column(7);
   }
 
-  p,
+  p:not(.paragraph-highlight),
   li {
     color: $dark-blue;
     font-size: rem-calc(12px);
