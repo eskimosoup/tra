@@ -27,6 +27,21 @@
   }
 }
 
+.sidebar {
+  @include breakpoint(medium) {
+    @include grid-column(5);
+    text-align: center;
+  }
+}
+
+.sidebar-content {
+  @include breakpoint(medium) {
+    border-left: 1px solid $light-blue;
+    padding-left: rem-calc(22px);
+    margin-left: rem-calc(15px);
+  }
+}
+
 .focus-heading {
   border-bottom: 5px solid $pastel-green;
   display: inline-block;
