@@ -7,12 +7,12 @@
 
 .articles {
   @extend %clearfix;
-}
 
-.article {
-  @include breakpoint(medium) {
-    float: left;
-    width: grid-column(4);
+  .article {
+    @include breakpoint(medium) {
+      float: left;
+      width: grid-column(4);
+    }
   }
 }
 

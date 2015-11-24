@@ -12,4 +12,26 @@
   <div class="content">
     <%= @presented_page.content %>
   </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <h2 class="focus-heading">Latest News</h2>
+
+      <div class="article">
+        <%= link_to 'News headline here', '#', class: 'article-title' %>
+
+        <p class="article-summary">News summary will go here with a link to read the full story.</p>
+
+        <%= link_to 'Read more', '#', class: 'article-read-more' %>
+      </div>
+
+      <div class="article">
+        <%= link_to 'News headline here', '#', class: 'article-title' %>
+
+        <p class="article-summary">News summary will go here with a link to read the full story.</p>
+
+        <%= link_to 'Read more', '#', class: 'article-read-more' %>
+      </div>
+    </div>
+  </aside>
 </div>

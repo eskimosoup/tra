@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
   def load_objects
     @header_menu = Optimadmin::Menu.new(name: "header")
+    @footer_menu = Optimadmin::Menu.new(name: "footer")
   end
 
   def global_site_settings
