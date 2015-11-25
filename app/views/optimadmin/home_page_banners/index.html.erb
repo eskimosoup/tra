@@ -1,0 +1,45 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Home Page Banners' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Home Page Banner', object: HomePageBanner, path: new_home_page_banner_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @home_page_banners.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+    
+      <%= list_item 'large-1 hide-for-medium-down' do %>
+        <%= link_to octicon('settings') %>
+      <% end %>
+    
+
+    
+
+    
+      <%= list_item 'large-5 small-8' do %>
+        <%= link_to octicon('chevron-down'), '#', class: 'helper-link index-list-expand-all', data: { this_class: 'octicon-chevron-up octicon-chevron-down' } %>
+        Title
+      <% end %>
+    
+
+    
+    <%= list_item('large-2 hide-for-medium-down'){ 'Image' } %>
+    
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'View' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item('large-1 hide-for-medium-down text-center last'){ 'Delete' } %>
+  </div>
+
+  <div class='module-sortable' data-module="HomePageBanner">
+    <%= render partial: 'home_page_banner', collection: @home_page_banners, as: :home_page_banner_presenter %>
+  </div>
+  <%= paginate @home_page_banners %>
+</div>

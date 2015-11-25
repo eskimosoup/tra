@@ -68,6 +68,26 @@ Rails.application.routes.draw do
   #   end
 end
 Optimadmin::Engine.routes.draw do
+  resources :home_page_banners, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
+  resources :home_page_banners, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
 
 
   resources :pages, except: :show do

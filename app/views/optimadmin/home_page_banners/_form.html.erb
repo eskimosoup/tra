@@ -1,0 +1,57 @@
+<%= form_for(@home_page_banner) do |f| %>
+<% if @home_page_banner.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@home_page_banner.errors.count, "error") %> prohibited this home_page_banner from being saved:</h2>
+
+    <ul>
+      <% @home_page_banner.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+  <div class="tabs prevent-flash">
+    <ul class="tab-list">
+      <li><a href="#tabs-1">Content</a></li>
+      <li><a href="#tabs-2">Media</a></li>
+      <li><a href="#tabs-3">Settings</a></li>
+      <li>
+        <%= link_to '#', class: 'destroy-tabs right', data: { class: 'tabs' } do %>
+          <%= octicon('chevron-down') %>
+        <% end %>
+      </li>
+    </ul>
+
+    <%= field_set_tag nil, id: 'tabs-1' do %>
+            <div class="field">
+        <%= f.label :title %> <%= module_tooltip('Organisational purposes only', 'This is never shown to the user') %><br>
+        <%= f.text_field :title %>
+      </div>
+            <div class="field">
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+      </div>
+
+
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-2' do %>
+            <%= f.image_field :image %>
+
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-3' do %>
+            <div class="field">
+        <%= f.label :display %><br>
+        <%= f.check_box :display %>
+      </div>
+          <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
