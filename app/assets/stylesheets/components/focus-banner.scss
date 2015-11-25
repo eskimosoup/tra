@@ -3,6 +3,11 @@
   @include grid-column(12);
   margin-bottom: rem-calc(51px);
 
+  @include breakpoint(medium) {
+    height: 256px;
+    overflow: hidden;
+  }
+
   .focus-banner-information {
     background: image-url('components/banner/large-mask.png') no-repeat left center;
     max-height: 258px;
@@ -11,6 +16,7 @@
     z-index: 1;
 
     @include breakpoint(medium) {
+      height: 100%;
       width: 607px;
     }
   }

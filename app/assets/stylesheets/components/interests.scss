@@ -1,4 +1,4 @@
-%interest {
+.interest {
   margin: rem-calc(0 0 25px);
 
   a {
@@ -10,16 +10,14 @@
   &:hover .interest-content {
     text-decoration: underline;
   }
-}
 
-.interest-1 {
-  @extend %interest;
-  background: $pastel-blue;
-}
+  &.blue {
+    background: $pastel-blue;
+  }
 
-.interest-2 {
-  @extend %interest;
-  background: $pastel-green;
+  &.green {
+    background: $pastel-green;
+  }
 }
 
 .interest-content {

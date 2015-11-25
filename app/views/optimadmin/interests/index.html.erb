@@ -1,0 +1,43 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Interests' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Interest', object: Interest, path: new_interest_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @interests.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+
+      <%= list_item 'large-1 hide-for-medium-down' do %>
+        <%= link_to octicon('settings') %>
+      <% end %>
+
+
+
+
+
+      <%= list_item 'large-6 small-8' do %>
+        Title
+      <% end %>
+
+
+
+    <%= list_item('large-2 hide-for-medium-down'){ 'Image' } %>
+
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item('large-1 hide-for-medium-down text-center last'){ 'Delete' } %>
+  </div>
+
+  <div class='module-sortable' data-module="Interest">
+  <%= render partial: 'interest', collection: @interests, as: :interest_presenter %>
+  </div>
+  <%= paginate @interests %>
+</div>

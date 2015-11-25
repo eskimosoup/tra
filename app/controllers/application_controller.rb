@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: -> { render_error(404) }
     rescue_from ActiveRecord::RecordNotFound, with: -> { render_error(404) }
@@ -19,14 +18,19 @@ class ApplicationController < ActionController::Base
 
   before_action :global_site_settings, :load_objects
 
+  include PresenterHelper
+
   def index
+    @presented_home_page_banners = present_collection(HomePageBanner.displayed)
+    @presented_additional_content = present(AdditionalContent.area('Home page'))
+    @presented_interests = present_collection(Interest.displayed)
   end
 
   private
 
   def load_objects
-    @header_menu = Optimadmin::Menu.new(name: "header")
-    @footer_menu = Optimadmin::Menu.new(name: "footer")
+    @header_menu = Optimadmin::Menu.new(name: 'header')
+    @footer_menu = Optimadmin::Menu.new(name: 'footer')
   end
 
   def global_site_settings

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
   resources :pages, only: :show
-
+  
+  get :frequently_asked_questions, to: 'frequently_asked_questions#index', path: 'frequently-asked-questions'
 
   %w( 403 404 422 500 ).each do |code|
     get code, to: 'errors#show', code: code
@@ -68,6 +68,56 @@ Rails.application.routes.draw do
   #   end
 end
 Optimadmin::Engine.routes.draw do
+  get 'frequently_asked_questions/index'
+
+  resources :frequently_asked_questions, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
+  resources :interests, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
+  resources :additional_contents, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
+  resources :home_page_banners, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
+  resources :home_page_banners, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
 
 
   resources :pages, except: :show do

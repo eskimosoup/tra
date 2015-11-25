@@ -4,6 +4,7 @@ FactoryGirl.define do
     style "basic"
     layout "application"
     content "<p>test</p>"
+    sidebar "interests"
     trait :with_image do
       image { File.open(File.join(Rails.root, "spec/support/images/landscape_image.jpg")) }
     end

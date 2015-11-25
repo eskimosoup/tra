@@ -53,6 +53,11 @@
     </div>
 
     <div class="field">
+      <%= f.label :sidebar %><br />
+      <%= f.select :sidebar, Page::SIDEBARS.map{|x| [x.humanize, x]} %>
+    </div>
+
+    <div class="field">
       <%= f.label :suggested_url %><br />
       <%= f.text_field :suggested_url %>
     </div>

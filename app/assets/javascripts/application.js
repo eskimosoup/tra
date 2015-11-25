@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require components/toggle-class
 //= require vendor/foundation
+//= require slick.js/slick.js
+
 $(document).foundation();

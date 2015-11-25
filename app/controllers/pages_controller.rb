@@ -11,5 +11,6 @@ class PagesController < ApplicationController
     def set_page
       @page = Page.displayed.friendly.find(params[:id])
       @presented_page = PagePresenter.new(object: @page, view_template: view_context)
+      @presented_interests = present_collection(Interest.displayed) if @page.sidebar == 'interests'
     end
 end

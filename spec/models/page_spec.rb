@@ -5,6 +5,8 @@ RSpec.describe Page, type: :model do
     subject(:page) { build(:page) }
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:content) }
+    it { should validate_presence_of(:sidebar) }
+    it { should validate_inclusion_of(:sidebar).in_array(Page::SIDEBARS) }
     it { should validate_uniqueness_of(:suggested_url).allow_blank.case_insensitive.with_message("is already taken, leave blank to generate automatically") }
   end
 
