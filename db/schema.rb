@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125091541) do
+ActiveRecord::Schema.define(version: 20151125145345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "additional_contents", force: :cascade do |t|
+    t.string   "area",                      null: false
+    t.string   "title"
+    t.text     "content",                   null: false
+    t.boolean  "display",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "frequently_asked_questions", force: :cascade do |t|
+    t.integer  "position"
+    t.text     "question",                  null: false
+    t.text     "answer",                    null: false
+    t.boolean  "display",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -34,6 +52,18 @@ ActiveRecord::Schema.define(version: 20151125091541) do
     t.string   "title"
     t.string   "image"
     t.text     "content",                   null: false
+    t.boolean  "display",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.integer  "position"
+    t.string   "title",                     null: false
+    t.string   "link"
+    t.string   "file"
+    t.string   "image"
+    t.string   "colour",                    null: false
     t.boolean  "display",    default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -134,6 +164,7 @@ ActiveRecord::Schema.define(version: 20151125091541) do
     t.text     "content",                      null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "sidebar"
   end
 
 end

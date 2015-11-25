@@ -1,0 +1,11 @@
+<div class="interest <%= interest_presenter.colour %>">
+  <%= link_to interest_presenter.interest_link, title: interest_presenter.title do %>
+    <div class="interest-content">
+      <%= interest_presenter.title %>
+    </div>
+
+    <div class="interest-icon">
+      <%= interest_presenter.show_image(alt: interest_presenter.title) %>
+    </div>
+  <% end %>
+</div>

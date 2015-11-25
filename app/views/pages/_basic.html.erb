@@ -5,7 +5,7 @@
     </h1>
   </div>
 
-  <%= image_tag 'components/banner/small-placeholder.jpg', alt: '', class: 'small-focus-banner-image' %>
+  <%= @presented_page.banner_image(alt: '', class: 'small-focus-banner-image') %>
 </div>
 
 <div class="content-focus">
@@ -13,25 +13,5 @@
     <%= @presented_page.content %>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-content">
-      <h2 class="focus-heading">Latest News</h2>
-
-      <div class="article">
-        <%= link_to 'News headline here', '#', class: 'article-title' %>
-
-        <p class="article-summary">News summary will go here with a link to read the full story.</p>
-
-        <%= link_to 'Read more', '#', class: 'article-read-more' %>
-      </div>
-
-      <div class="article">
-        <%= link_to 'News headline here', '#', class: 'article-title' %>
-
-        <p class="article-summary">News summary will go here with a link to read the full story.</p>
-
-        <%= link_to 'Read more', '#', class: 'article-read-more' %>
-      </div>
-    </div>
-  </aside>
+  <%= render "pages/sidebars/#{@presented_page.sidebar}" %>
 </div>

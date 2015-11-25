@@ -1,4 +1,4 @@
-class HomePageBanner < ActiveRecord::Base
+class HomePageBanner < ActiveRecord::Base  
   mount_uploader :image, HomePageBannerUploader
 
   validates :content, presence: true

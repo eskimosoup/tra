@@ -6,6 +6,7 @@ RSpec.describe PagePresenter, type: :presenter do
 
   describe "delegations", :delegation do
     it { should delegate_method(:title).to(:page) }
+    it { should delegate_method(:sidebar).to(:page) }
   end
 
   describe "standard page" do
@@ -16,6 +17,10 @@ RSpec.describe PagePresenter, type: :presenter do
 
   describe "images" do
     describe "no image" do
+      it "banner image should return placeholder" do
+        expect(page_presenter.banner_image).to eq(view.image_tag 'components/banner/small-placeholder.jpg')
+      end
+
       it "show image should return nil" do
         expect(page_presenter.show_image).to eq(nil)
       end
@@ -26,7 +31,11 @@ RSpec.describe PagePresenter, type: :presenter do
       subject(:page_presenter) { PagePresenter.new(object: page, view_template: view)}
 
       it "show image should not return nil" do
-        expect(page_presenter.show_image(alt: page.title)).to eq(image_tag(page.image.show, alt: page.title))
+        expect(page_presenter.show_image(alt: page.title)).to eq(view.image_tag(page.image.show, alt: page.title))
+      end
+
+      it "banner image should not return nil" do
+        expect(page_presenter.banner_image(alt: page.title)).to eq(view.image_tag(page.image.show, alt: page.title))
       end
     end
   end

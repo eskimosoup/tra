@@ -1,7 +1,17 @@
 module PresenterHelper
   def present(object)
     return if object.nil? || object.class.presenter.blank?
-    presenter = object.class.presenter.new(object: object, view_template: self)
+    presenter = object.class.presenter.new(object: object, view_template: view_context)
+    present_object(presenter)
+  end
+
+  def present_collection(object)
+    return if object.nil? || object.presenter.blank?
+    presenter = BaseCollectionPresenter.new(collection: object, view_template: view_context, presenter: object.presenter)
+    present_object(presenter)
+  end
+
+  def present_object(presenter)
     yield presenter if block_given?
     presenter
   end
