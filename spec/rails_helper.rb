@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
 #require 'capybara/poltergeist'
 require 'shoulda-matchers'
 require 'database_cleaner'

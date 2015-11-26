@@ -1,0 +1,43 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Contact Query Types' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Contact Query Type', object: ContactQueryType, path: new_contact_query_type_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @contact_query_types.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+
+      <%= list_item 'large-1 hide-for-medium-down' do %>
+        <%= link_to octicon('settings') %>
+      <% end %>
+
+
+
+      <% # ADD TWO TO THE TITLE LARGE COLUMN SIZE BELOW TO ACCOUNT FOR NO IMAGE %>
+
+
+
+      <%= list_item 'large-8 small-8' do %>
+        Query type
+      <% end %>
+
+
+
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item('large-1 hide-for-medium-down text-center last'){ 'Delete' } %>
+  </div>
+
+  <div class='module-sortable' data-module="ContactQueryType">
+    <%= render partial: 'contact_query_type', collection: @contact_query_types, as: :contact_query_type_presenter %>
+  </div>
+  <%= paginate @contact_query_types %>
+</div>

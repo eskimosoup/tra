@@ -9,6 +9,14 @@ RSpec.describe ArticlePresenter, type: :presenter do
   end
 
   describe "standard article" do
+    it "returns the linked title" do
+      expect(article_presenter.linked_title).to eq(link_to article.title, article)
+    end
+
+    it "returns the linked read more" do
+      expect(article_presenter.linked_read_more).to eq(link_to 'Read more', article)
+    end
+
     it "returns the summary - html formatted" do
       expect(article_presenter.summary).to eq(simple_format article.summary)
     end
@@ -45,11 +53,19 @@ RSpec.describe ArticlePresenter, type: :presenter do
       it "index image should return nil" do
         expect(article_presenter.index_image).to eq(nil)
       end
+
+      it "linked index image should return nil" do
+        expect(article_presenter.linked_index_image).to eq(nil)
+      end
     end
 
     describe "has image" do
       let(:article) { build(:article_with_image) }
       subject(:article_presenter) { ArticlePresenter.new(object: article, view_template: view)}
+
+      it "linked index image should not return nil" do
+        expect(article_presenter.linked_index_image(alt: article.title)).to eq(link_to (view.image_tag(article.image.index, alt: article.title)), article)
+      end
 
       it "index image should not return nil" do
         expect(article_presenter.index_image(alt: article.title)).to eq(view.image_tag(article.image.index, alt: article.title))

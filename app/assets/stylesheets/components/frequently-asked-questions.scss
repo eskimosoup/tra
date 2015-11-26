@@ -1,3 +1,27 @@
 .hide {
   display: none;
 }
+
+.frequently-asked-question .toggle-class {
+  border-bottom: 5px solid $pastel-green;
+  display: block;
+  font-size: rem-calc(14px);
+  letter-spacing: rem-calc(.5);
+  margin: rem-calc(7px 0);
+
+  p {
+    color: $light-turquoise;
+    font-size: rem-calc(14);
+    font-weight: $open-sans-bold;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.answer {
+  border-bottom: 1px solid $pastel-green;
+
+  p {
+    margin: rem-calc(5px 0);
+  }
+}

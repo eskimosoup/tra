@@ -1,8 +1,9 @@
-class ArticleController < ApplicationController
+class ArticlesController < ApplicationController
   before_action :set_interests
   before_action :set_article, only: [:show]
 
   def index
+    @presented_articles = present_collection(Article.displayed)
   end
 
   def show
@@ -11,12 +12,12 @@ class ArticleController < ApplicationController
 
   private
 
-    def set_page
+    def set_article
       @article = Article.displayed.find(params[:id])
       @presented_article = present(@article)
     end
 
     def set_interests
-      @presented_interests = present_collection(Interest.displayed) if @page.sidebar == 'interests'
+      @presented_interests = present_collection(Interest.displayed)
     end
 end

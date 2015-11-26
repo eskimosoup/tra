@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :pages, only: :show
   resources :articles, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
 
   get :frequently_asked_questions, to: 'frequently_asked_questions#index', path: 'frequently-asked-questions'
 
@@ -69,6 +70,14 @@ Rails.application.routes.draw do
   #   end
 end
 Optimadmin::Engine.routes.draw do
+  resources :contact_query_types, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
   get 'article/index'
 
   get 'article/show'
