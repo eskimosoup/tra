@@ -1,0 +1,22 @@
+.sidebar {
+  @include breakpoint(medium) {
+    @include grid-column(5);
+  }
+
+  .article-aside {
+    text-align: center;
+  }
+
+  .interest-content {
+    margin: rem-calc(28px 0 0);
+    padding-right: rem-calc(5px);
+  }
+}
+
+.sidebar-content {
+  @include breakpoint(medium) {
+    border-left: 1px solid $light-blue;
+    padding-left: rem-calc(22px);
+    margin-left: rem-calc(15px);
+  }
+}

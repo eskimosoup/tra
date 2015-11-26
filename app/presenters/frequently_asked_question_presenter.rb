@@ -10,7 +10,7 @@ class FrequentlyAskedQuestionPresenter < BasePresenter
   end
 
   def answer
-    h.content_tag :div, id: id, class: 'hide' do
+    h.content_tag :div, id: id, class: 'answer hide' do
       h.simple_format frequently_asked_question.answer
     end
   end

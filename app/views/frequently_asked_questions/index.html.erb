@@ -1,1 +1,17 @@
-<%= render partial: 'frequently_asked_questions/frequently_asked_question', collection: @presented_frequently_asked_questions, as: :frequently_asked_question_presenter %>
+<div class="small-focus-banner">
+  <div class="focus-banner-information">
+    <h1>
+      Frequently Asked Questions
+    </h1>
+  </div>
+
+  <%= image_tag 'components/banner/small-placeholder.jpg', alt: '', class: 'small-focus-banner-image' %>
+</div>
+
+<div class="content-focus">
+  <div class="content">
+    <%= render partial: 'frequently_asked_questions/frequently_asked_question', collection: @presented_frequently_asked_questions, as: :frequently_asked_question_presenter %>
+  </div>
+
+  <%= render "pages/sidebars/interests" %>
+</div>

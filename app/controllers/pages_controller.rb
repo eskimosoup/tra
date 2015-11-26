@@ -12,5 +12,6 @@ class PagesController < ApplicationController
       @page = Page.displayed.friendly.find(params[:id])
       @presented_page = PagePresenter.new(object: @page, view_template: view_context)
       @presented_interests = present_collection(Interest.displayed) if @page.sidebar == 'interests'
+      @presented_articles = present_collection(Article.displayed.limit(3)) if @page.sidebar == 'articles'
     end
 end

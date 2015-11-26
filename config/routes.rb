@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :pages, only: :show
-  
+  resources :articles, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
+
   get :frequently_asked_questions, to: 'frequently_asked_questions#index', path: 'frequently-asked-questions'
 
   %w( 403 404 422 500 ).each do |code|
@@ -68,6 +70,30 @@ Rails.application.routes.draw do
   #   end
 end
 Optimadmin::Engine.routes.draw do
+  resources :contact_query_types, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
+  get 'article/index'
+
+  get 'article/show'
+
+  resources :articles, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
   get 'frequently_asked_questions/index'
 
   resources :frequently_asked_questions, except: [:show] do

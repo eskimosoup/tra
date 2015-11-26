@@ -1,0 +1,13 @@
+<div class="article-index">
+  <div class="article-index-image">
+    <%= article_presenter.linked_index_image(alt: article_presenter.title) %>
+  </div>
+
+  <div class="article-index-preview">
+    <%= article_presenter.linked_title(class: 'article-title') %>
+
+    <%= article_presenter.summary %>
+
+    <%= article_presenter.linked_read_more(class: 'article-read-more') %>
+  </div>
+</div>

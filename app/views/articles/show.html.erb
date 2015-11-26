@@ -1,0 +1,17 @@
+<div class="small-focus-banner">
+  <div class="focus-banner-information">
+    <h1>
+      <%= @presented_article.title %>
+    </h1>
+  </div>
+
+  <%= @presented_article.banner_image(class: 'small-focus-banner-image') %>
+</div>
+
+<div class="content-focus">
+  <div class="content">
+    <%= @presented_article.content %>
+  </div>
+
+  <%= render "pages/sidebars/interests" %>
+</div>

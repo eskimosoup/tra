@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   include PresenterHelper
 
   def index
+    @presented_articles = present_collection(Article.displayed.limit(3))
     @presented_home_page_banners = present_collection(HomePageBanner.displayed)
     @presented_additional_content = present(AdditionalContent.area('Home page'))
     @presented_interests = present_collection(Interest.displayed)

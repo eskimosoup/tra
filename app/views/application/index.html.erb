@@ -31,32 +31,6 @@ $(document).ready(function() {
   <h2 class="focus-heading">Latest News</h2>
 
   <div class="articles">
-    <div class="article">
-      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
-
-      <%= link_to 'News headline here', '#', class: 'article-title' %>
-
-      <p class="article-summary">News summary will go here with a link to read the full story.</p>
-
-      <%= link_to 'Read more', '#', class: 'article-read-more' %>
-    </div>
-    <div class="article">
-      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
-
-      <%= link_to 'News headline here', '#', class: 'article-title' %>
-
-      <p class="article-summary">News summary will go here with a link to read the full story.</p>
-
-      <%= link_to 'Read more', '#', class: 'article-read-more' %>
-    </div>
-    <div class="article">
-      <%= link_to (image_tag 'http://placehold.it/239x174', class: 'article-image'), '#' %>
-
-      <%= link_to 'News headline here', '#', class: 'article-title' %>
-
-      <p class="article-summary">News summary will go here with a link to read the full story.</p>
-
-      <%= link_to 'Read more', '#', class: 'article-read-more' %>
-    </div>
+    <%= render partial: 'articles/article_grid', collection: @presented_articles, as: :article_presenter %>
   </div>
 </div>

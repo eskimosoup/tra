@@ -27,6 +27,7 @@
     color: $dark-grey;
     display: block;
     padding: rem-calc(0 0 12px);
+    border-bottom: 5px solid $white;
 
     &:hover,
     &.active {

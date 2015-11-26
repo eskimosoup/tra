@@ -1,0 +1,17 @@
+<div class="small-focus-banner">
+  <div class="focus-banner-information">
+    <h1>
+      Articles
+    </h1>
+  </div>
+
+  <%= image_tag 'components/banner/small-placeholder.jpg', alt: '', class: 'small-focus-banner-image' %>
+</div>
+
+<div class="content-focus">
+  <div class="content">
+    <%= render partial: 'articles/article', collection: @presented_articles, as: :article_presenter %>
+  </div>
+
+  <%= render "pages/sidebars/interests" %>
+</div>

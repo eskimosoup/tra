@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125145345) do
+ActiveRecord::Schema.define(version: 20151126121445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,27 @@ ActiveRecord::Schema.define(version: 20151125145345) do
     t.string   "area",                      null: false
     t.string   "title"
     t.text     "content",                   null: false
+    t.boolean  "display",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",                        null: false
+    t.text     "summary"
+    t.text     "content",                      null: false
+    t.string   "image"
+    t.date     "date",                         null: false
+    t.boolean  "display",       default: true
+    t.string   "slug"
+    t.string   "suggested_url"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "contact_query_types", force: :cascade do |t|
+    t.integer  "position"
+    t.string   "query_type",                null: false
     t.boolean  "display",    default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
