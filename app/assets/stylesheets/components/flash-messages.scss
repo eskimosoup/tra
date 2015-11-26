@@ -1,0 +1,55 @@
+// Flash messages SCSS
+%flash-heading {
+  font-weight: normal;
+  font-size: rem-calc(20px);
+}
+
+// Flash
+.flash-message {
+  border: 1px solid $light-grey;
+  color: $white;
+  margin: 0 0 rem-calc(20px);
+
+  h2 {
+    @extend %flash-heading;
+  }
+
+  ul {
+    font-weight: normal;
+  }
+
+  &.notice {
+    background: $pastel-green;
+    font-weight: bold;
+    color: $dark-grey;
+  }
+
+  &.error {
+    background: $pastel-red;
+    font-weight: bold;
+  }
+
+  &.alert {
+    background: $pastel-red;
+    font-weight: bold;
+  }
+}
+
+.error_messages,
+#error_explanation {
+  background: $pastel-red;
+  color: $white;
+
+  h2 {
+    @extend %flash-heading;
+  }
+
+  ul {
+    font-weight: normal;
+  }
+
+  li {
+    color: $white;
+    font-size: rem-calc(14px);
+  }
+}

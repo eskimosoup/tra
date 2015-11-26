@@ -1,5 +1,22 @@
-<div class="internal-content">
-  <%= render 'shared/flash_messages' %>
+<div class="small-focus-banner">
+  <div class="focus-banner-information">
+    <h1>
+      Contact Us
+    </h1>
+  </div>
 
-  <%= render 'form' %>
+  <%= image_tag 'components/banner/small-placeholder.jpg', alt: '', class: 'small-focus-banner-image' %>
+</div>
+
+<div class="content-focus">
+  <div class="content">
+    <%= @presented_additional_content.content %>
+
+    <%= render 'shared/flash_messages' %>
+    
+    <%= render 'form' %>
+  </div>
+
+
+  <%= render 'pages/sidebars/interests' %>
 </div>

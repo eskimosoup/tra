@@ -1,7 +1,7 @@
 class AdditionalContent < ActiveRecord::Base
   validates :content, presence: true
 
-  AREAS = ['Home page']
+  AREAS = ['Home page', 'Contact page']
 
   validates :area, presence: true, uniqueness: true, inclusion: AREAS
 

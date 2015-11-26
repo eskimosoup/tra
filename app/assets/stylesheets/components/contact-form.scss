@@ -1,0 +1,43 @@
+.details {
+  @include grid-row($behavior: 'collapse');
+
+  .field {
+    @include grid-column(6);
+    @include grid-column-collapse;
+    padding-right: rem-calc(5);
+
+    &.full {
+      @include grid-column(12);
+      @include grid-column-collapse;
+    }
+  }
+}
+
+label,
+input[type='text'],
+input[type='email'],
+textarea,
+select {
+  color: $dark-blue;
+  font-size: rem-calc(12px);
+  letter-spacing: rem-calc(.5);
+  line-height: 1.25;
+}
+
+input[type='submit'] {
+  background: $pastel-green;
+  border-radius: 2px;
+  border: 0;
+  color: $dark-grey;
+  display: inline-block;
+  font-size: rem-calc(14px);
+  font-weight: $open-sans-bold;
+  letter-spacing: rem-calc(0.5);
+  padding: rem-calc(15px 20px);
+  margin: rem-calc(0 0 14px);
+
+  &:hover {
+    background: darken($pastel-green, 15%);
+    color: $white;
+  }
+}
