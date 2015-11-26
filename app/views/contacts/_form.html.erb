@@ -13,29 +13,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="details">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :company %>
-    <%= f.text_field :company %>
+  <div class="details">
+    <div class="field">
+      <%= f.label :email_address %>
+      <%= f.email_field :email_address %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email_address %>
-    <%= f.email_field :email_address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :query_type %>
-    <%= f.select :query_type, ContactQueryType.displayed.pluck(:query_type), prompt: 'Please select' %>
+  <div class="details">
+    <div class="full field">
+      <%= f.label :query_type %>
+      <%= f.select :query_type, ContactQueryType.displayed.pluck(:query_type), prompt: 'Please select' %>
+    </div>
   </div>
 
   <div class="field">

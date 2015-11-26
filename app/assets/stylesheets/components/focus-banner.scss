@@ -37,7 +37,7 @@
 .small-focus-banner {
   @include grid-row;
   @include grid-column(12);
-  margin-bottom: rem-calc(51px);
+  margin-bottom: rem-calc(31px);
   max-height: 83px;
   overflow: hidden;
 
