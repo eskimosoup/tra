@@ -16,6 +16,9 @@
 .sidebar-content {
   @include breakpoint(medium) {
     border-left: 1px solid $light-blue;
+  }
+
+  @include breakpoint(large) {
     padding-left: rem-calc(22px);
     margin-left: rem-calc(15px);
   }

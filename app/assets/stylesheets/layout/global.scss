@@ -1,7 +1,13 @@
 html,
 body {
-  background: $light-grey image-url('layout/global/background.png') no-repeat fixed center;
+  background-color: $light-grey;
   min-height: 100%;
+
+  @include breakpoint(medium) {
+    background-image: image-url('layout/global/background.png');
+    background-position: fixed center;
+    background-repeat: no-repeat;
+  }
 }
 
 .site-content {

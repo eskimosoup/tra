@@ -37,11 +37,13 @@
 }
 
 %article-summary {
-  color: $dark-grey;
-  font-size: em(11px);
-  line-height: 1.58;
-  margin: rem-calc(0 0 8px 0);
-  padding: rem-calc(0 0 4px 0);
+  p {
+    color: $dark-grey;
+    font-size: em(11px);
+    line-height: 1.58;
+    margin: rem-calc(0 0 8px 0);
+    padding: rem-calc(0 0 4px 0);
+  }
 }
 
 .article-summary {
@@ -49,7 +51,7 @@
   border-bottom: 2px solid $pastel-green;
 
   @include breakpoint(medium) {
-    padding: rem-calc(0 0 16px 0);
+    //padding: rem-calc(0 0 16px 0);
     margin: rem-calc(0 40px 24px 40px);
   }
 }

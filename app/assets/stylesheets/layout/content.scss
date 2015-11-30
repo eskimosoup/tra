@@ -19,6 +19,20 @@
     color: $alternative-turquoise;
     font-weight: $open-sans-extrabold;
   }
+
+  a {
+    text-decoration: underline;
+
+    &:link,
+    &:visited  {
+      color: $turquoise;
+    }
+
+    &:hover,
+    &:active {
+      color: $black;
+    }
+  }
 }
 
 .interests {

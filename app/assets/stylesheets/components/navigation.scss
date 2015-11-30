@@ -35,3 +35,14 @@
     }
   }
 }
+
+.mobile-menu {
+  @include grid-column(4);
+  display: block;
+  padding: rem-calc(20px);
+  text-align: right;
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}

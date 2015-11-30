@@ -24,13 +24,13 @@
       </div>
 
       <ul id="modules" class="content-category-list">
-<%= module_link(content: "Contact Query Type", model: ContactQueryType, path: contact_query_types_path) %>
         <%= module_link(content: "Articles", model: Article, path: articles_path) %>
+        <%= module_link(model: Page, path: pages_path) %>
         <%= module_link(content: "Frequently Asked Questions", model: FrequentlyAskedQuestion, path: frequently_asked_questions_path) %>
         <%= module_link(content: "Interests", model: Interest, path: interests_path) %>
         <%= module_link(content: "Additional Contents", model: AdditionalContent, path: additional_contents_path) %>
         <%= module_link(content: "Home Page Banners", model: HomePageBanner, path: home_page_banners_path) %>
-        <%= module_link(model: Page, path: pages_path) %>
+        <%= module_link(content: "Contact Query Type", model: ContactQueryType, path: contact_query_types_path) %>
         <% if can? :manage, Optimadmin::MenuItem %>
           <li><%= link_to 'Site Navigation', menu_items_path %></li>
         <% end %>
