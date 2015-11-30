@@ -1,7 +1,9 @@
 <div class="article">
   <%= article_presenter.linked_title(class: 'article-title') %>
 
-  <%= article_presenter.summary %>
+  <div class="article-summary">
+    <%= article_presenter.summary %>
+  </div>
 
   <%= article_presenter.linked_read_more(class: 'article-read-more') %>
 </div>
