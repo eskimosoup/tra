@@ -6,8 +6,12 @@
   border-bottom: 5px solid $pastel-green;
   display: block;
   font-size: rem-calc(14px);
-  letter-spacing: rem-calc(.5);
   margin: rem-calc(7px 0);
+  text-decoration: none;
+
+  @include breakpoint(medium) {
+    letter-spacing: rem-calc(.5);
+  }
 
   p {
     color: $light-turquoise;

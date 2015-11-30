@@ -1,10 +1,18 @@
 .interest {
-  margin: rem-calc(0 0 25px);
+  margin: rem-calc(14px 0);
+
+  @include breakpoint(medium) {
+    margin: rem-calc(0 0 25px);
+  }
 
   a {
     @extend %clearfix;
     display: block;
-    padding: rem-calc(7px 16px 7px 28px);
+    padding: rem-calc(7px);
+
+    @include breakpoint(large) {
+      padding: rem-calc(7px 16px 7px 28px);
+    }
   }
 
   &:hover .interest-content {
@@ -27,9 +35,14 @@
   font-size: rem-calc(14px);
   font-weight: $open-sans-extrabold;
   line-height: 1.3;
-  margin: rem-calc(38px 0 0);
+  margin: rem-calc(19px 0 0);
+  padding: rem-calc(0 0 0 28px);
   min-height: 40px;
-  padding: rem-calc(0 0 0 34px);
+
+  @include breakpoint(large) {
+    margin: rem-calc(38px 0 0);
+    padding: rem-calc(0 0 0 34px);
+  }
 }
 
 .interest-icon {

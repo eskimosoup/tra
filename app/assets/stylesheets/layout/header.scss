@@ -4,6 +4,8 @@
 }
 
 .logo {
+  @include grid-column(8);
+
   @include breakpoint(medium) {
     @include grid-column(6);
   }
@@ -14,5 +16,16 @@
 
   @include breakpoint(medium) {
     @include grid-column(6);
+  }
+}
+
+.primary-navigation {
+  background: $white;
+  border: 1px solid $pastel-orange;
+  padding: rem-calc(20px);
+
+  @include breakpoint(medium) {
+    border: 0;
+    padding: 0;
   }
 }

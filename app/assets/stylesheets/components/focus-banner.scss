@@ -1,9 +1,9 @@
 .primary-focus-banner {
-  @include grid-row;
-  @include grid-column(12);
   margin-bottom: rem-calc(51px);
 
   @include breakpoint(medium) {
+    @include grid-row;
+    @include grid-column(12);
     height: 256px;
     overflow: hidden;
   }
@@ -35,19 +35,27 @@
 }
 
 .small-focus-banner {
-  @include grid-row;
-  @include grid-column(12);
-  margin-bottom: rem-calc(31px);
-  max-height: 83px;
+  margin-bottom: rem-calc(16px);
   overflow: hidden;
+
+  @include breakpoint(medium) {
+    @include grid-row;
+    @include grid-column(12);
+    margin-bottom: rem-calc(31px);
+    max-height: 83px;
+  }
 
   .focus-banner-information {
     background: image-url('components/banner/small-mask.png') no-repeat left center;
-    padding: rem-calc(34px 210px 30px 34px);
-    position: absolute;
+    text-align: center;
+    padding: rem-calc(34px);
+    width: 100%;
     z-index: 1;
 
     @include breakpoint(medium) {
+      padding: rem-calc(34px 210px 30px 34px);
+      position: absolute;
+      text-align: left;
       width: 607px;
     }
   }
@@ -64,5 +72,10 @@
 
 .primary-focus-banner-image,
 .small-focus-banner-image {
-  float: right;
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+    float: right;
+  }
 }
