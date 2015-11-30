@@ -19,7 +19,8 @@ class ContactsController < ApplicationController
   private
 
     def load_content
-      @presented_additional_content = present(AdditionalContent.area('Contact page'))
+      additional_content = AdditionalContent.area('Contact page')
+      @presented_additional_content = present(@additional_content) if additional_content.present?
       @presented_interests = present_collection(Interest.displayed)
     end
 

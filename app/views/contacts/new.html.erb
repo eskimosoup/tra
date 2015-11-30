@@ -10,10 +10,10 @@
 
 <div class="content-focus">
   <div class="content">
-    <%= @presented_additional_content.content %>
+    <%= @presented_additional_content.content if @presented_additional_content.present? %>
 
     <%= render 'shared/flash_messages' %>
-    
+
     <%= render 'form' %>
   </div>
 
