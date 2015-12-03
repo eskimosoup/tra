@@ -3,7 +3,11 @@ class ArticlePresenter < BasePresenter
   delegate :title, to: :article
 
   def linked_index_image(image_options = {}, link_options = {})
-    h.link_to index_image(image_options), article, link_options if index_image.present?
+    if index_image.present?
+      h.link_to index_image(image_options), article, link_options
+    else
+      h.link_to (h.image_tag 'placeholders/article-image.jpg', image_options), article, link_options
+    end
   end
 
   def linked_title(options = {})

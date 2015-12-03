@@ -54,8 +54,8 @@ RSpec.describe ArticlePresenter, type: :presenter do
         expect(article_presenter.index_image).to eq(nil)
       end
 
-      it "linked index image should return nil" do
-        expect(article_presenter.linked_index_image).to eq(nil)
+      it "linked index image should return placeholder" do
+        expect(article_presenter.linked_index_image).to eq(link_to (view.image_tag 'placeholders/article-image.jpg'), article)
       end
     end
 
