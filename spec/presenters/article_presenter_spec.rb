@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe ArticlePresenter, type: :presenter do
+RSpec.describe ArticlePresenter, type: :presenter, article: true do
   let(:article) { build(:article) }
-  subject(:article_presenter) { ArticlePresenter.new(object: article, view_template: view)}
+  subject(:article_presenter) { ArticlePresenter.new(object: article, view_template: view) }
 
   describe "delegations", :delegation do
     it { should delegate_method(:title).to(:article) }
@@ -10,11 +10,11 @@ RSpec.describe ArticlePresenter, type: :presenter do
 
   describe "standard article" do
     it "returns the linked title" do
-      expect(article_presenter.linked_title).to eq(link_to article.title, article)
+      expect(article_presenter.linked_title).to eq(link_to article.title, view.articles_path(article))
     end
 
     it "returns the linked read more" do
-      expect(article_presenter.linked_read_more).to eq(link_to 'Read more', article)
+      expect(article_presenter.linked_read_more).to eq(link_to 'Read more', view.articles_path(article))
     end
 
     it "returns the summary - html formatted" do
@@ -55,7 +55,7 @@ RSpec.describe ArticlePresenter, type: :presenter do
       end
 
       it "linked index image should return placeholder" do
-        expect(article_presenter.linked_index_image).to eq(link_to (view.image_tag 'placeholders/article-image.jpg'), article)
+        expect(article_presenter.linked_index_image).to eq(link_to (view.image_tag 'placeholders/article-image.jpg'), view.articles_path(article))
       end
     end
 
@@ -64,7 +64,7 @@ RSpec.describe ArticlePresenter, type: :presenter do
       subject(:article_presenter) { ArticlePresenter.new(object: article, view_template: view)}
 
       it "linked index image should not return nil" do
-        expect(article_presenter.linked_index_image(alt: article.title)).to eq(link_to (view.image_tag(article.image.index, alt: article.title)), article)
+        expect(article_presenter.linked_index_image(alt: article.title)).to eq(link_to (view.image_tag(article.image.index, alt: article.title)), view.articles_path(article))
       end
 
       it "index image should not return nil" do
