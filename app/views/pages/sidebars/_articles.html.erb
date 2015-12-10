@@ -3,5 +3,7 @@
     <h2 class="focus-heading">Latest News</h2>
 
     <%= render partial: 'articles/article_aside', collection: @presented_articles, as: :article_presenter %>
+
+    <%= link_to 'View all', articles_path, class: 'article-read-more' %>
   </div>
 </aside>

@@ -3,13 +3,18 @@
     @include grid-column(5);
   }
 
-  .article-aside {
-    text-align: center;
-  }
-
   .interest-content {
     margin: rem-calc(28px 0 0);
     padding-right: rem-calc(5px);
+  }
+
+  .article-summary,
+  .article-image {
+    margin-left: 0;
+  }
+
+  .article-image {
+    width: 40%;
   }
 }
 

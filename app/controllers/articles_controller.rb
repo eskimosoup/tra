@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     return redirect_to @article, status: :moved_permanently if request.path != article_path(@article)
+    @presented_articles = present_collection(Article.displayed.limit(3))
   end
 
   private
