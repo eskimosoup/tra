@@ -2,7 +2,7 @@ module Optimadmin
   class PagesController < Optimadmin::ApplicationController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
-    edit_images_for Page, [[:image, { show: ['fit', 545, 258] }]]
+    edit_images_for Page, [[:image, { show: ['fit', 420, 83] }]]
 
     def index
       @pages = Optimadmin::BaseCollectionPresenter.new(collection: Page.where('title ILIKE ?', "#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::PagePresenter)

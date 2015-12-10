@@ -14,7 +14,7 @@ RSpec.describe FrequentlyAskedQuestionPresenter, type: :presenter, frequently_as
     end
 
     it 'returns the answer - html formatted' do
-      expect(frequently_asked_question_presenter.answer).to eq(content_tag :div, (simple_format frequently_asked_question.answer), id: frequently_asked_question.id, class: 'answer hide')
+      expect(frequently_asked_question_presenter.answer).to eq(content_tag :div, (raw frequently_asked_question.answer), id: frequently_asked_question.id, class: 'answer hide')
     end
   end
 end
