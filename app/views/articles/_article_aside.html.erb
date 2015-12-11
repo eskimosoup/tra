@@ -1,9 +1,13 @@
-<div class="article">
-  <%= article_presenter.linked_index_image(class: 'article-image') %>
-  
-  <%= article_presenter.linked_title(class: 'article-title') %>
+<%= link_to article_path(article_presenter), class: 'article-aside-link' do %>
+  <div class="article">
+    <%= article_presenter.index_image(class: 'article-image') %>
 
-  <div class="article-summary">
-    <%= article_presenter.summary %>
+    <div class="article-title">
+      <%= article_presenter.title %>
+    </div>
+
+    <div class="article-summary">
+      <%= article_presenter.summary %>
+    </div>
   </div>
-</div>
+<% end %>

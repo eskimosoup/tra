@@ -94,3 +94,11 @@
     margin-top: 0;
   }
 }
+
+.article-aside-link {
+  display: block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
