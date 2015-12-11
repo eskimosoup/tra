@@ -10,13 +10,17 @@
 
   .focus-banner-information {
     background: image-url('components/banner/large-mask.png') no-repeat left center;
+    height: 100%;
     max-height: 258px;
-    padding: rem-calc(70px 210px 70px 70px);
+    padding: rem-calc(5px);
     position: absolute;
+    text-align: center;
+    width: 100%;
     z-index: 1;
 
     @include breakpoint(medium) {
-      height: 100%;
+      padding: rem-calc(70px 210px 70px 70px);
+      text-align: left;
       width: 607px;
     }
   }
