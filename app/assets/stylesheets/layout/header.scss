@@ -12,20 +12,23 @@
 }
 
 .primary-navigation-wrap {
-  position: relative;
-
   @include breakpoint(medium) {
     @include grid-column(6);
+    position: relative;
   }
 }
 
 .primary-navigation {
   background: $white;
   border: 1px solid $pastel-orange;
+  clear: both;
+  margin: em(5px) 0;
   padding: rem-calc(20px);
 
   @include breakpoint(medium) {
     border: 0;
+    clear: none;
+    margin: 0;
     padding: 0;
   }
 }
