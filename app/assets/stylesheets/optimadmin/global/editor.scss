@@ -1,5 +1,5 @@
 @import 'optimadmin/lib/mixins', '../../lib/variables';
-@import 'optimadmin/global/additional_reset', '../../vendor/foundation/util/unit';
+@import 'optimadmin/global/additional_reset',  '../../vendor/foundation/util/unit';
 
 body {
 
@@ -74,4 +74,43 @@ h6 {
   color: $turquoise;
   font-size: rem-calc(14px);
   font-weight: $open-sans-bold;
+}
+
+.content,
+.mce-content-body {
+  ul {
+    list-style-image: image-url('components/icons/bullet-point.png');
+    list-style-position: outside;
+
+    li {
+      margin: rem-calc(0 0 5px 25px);
+    }
+  }
+
+  p:not(.paragraph-highlight),
+  li {
+    color: $dark-blue;
+    font-size: rem-calc(13px);
+    letter-spacing: rem-calc(.5);
+    line-height: 1.7;
+  }
+
+  strong {
+    color: $alternative-turquoise;
+    font-weight: $open-sans-extrabold;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:link,
+    &:visited  {
+      color: $turquoise;
+    }
+
+    &:hover,
+    &:active {
+      color: $black;
+    }
+  }
 }
