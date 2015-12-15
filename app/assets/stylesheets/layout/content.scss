@@ -6,33 +6,6 @@
   @include breakpoint(medium) {
     @include grid-column(7);
   }
-
-  p:not(.paragraph-highlight),
-  li {
-    color: $dark-blue;
-    font-size: rem-calc(12px);
-    letter-spacing: rem-calc(.5);
-    line-height: 1.7;
-  }
-
-  strong {
-    color: $alternative-turquoise;
-    font-weight: $open-sans-extrabold;
-  }
-
-  a {
-    text-decoration: underline;
-
-    &:link,
-    &:visited  {
-      color: $turquoise;
-    }
-
-    &:hover,
-    &:active {
-      color: $black;
-    }
-  }
 }
 
 .interests {
