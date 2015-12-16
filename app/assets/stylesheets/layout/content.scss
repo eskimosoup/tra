@@ -6,6 +6,13 @@
   @include breakpoint(medium) {
     @include grid-column(7);
   }
+
+  &.home {
+    p,
+    li {
+      font-size: rem-calc(16px);
+    }
+  }
 }
 
 .interests {
